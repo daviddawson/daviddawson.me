@@ -1,6 +1,7 @@
+# GitHub backend configuration for Sveltia CMS
+# This configuration works with GitHub Pages without any Netlify involvement
 backend:
-  name: github
-  repo: daviddawson/daviddawson.me
+  name: git-gateway
   branch: main
   
 media_folder: "static/images"

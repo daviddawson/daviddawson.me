@@ -96,7 +96,7 @@
     {{ end }}
 </div>
 
-{{ $paginator := .Paginate .Pages }}
+{{ $paginator := .Paginate .Pages.ByDate.Reverse }}
 
 <ul class="post-list">
     {{ range $paginator.Pages }}
