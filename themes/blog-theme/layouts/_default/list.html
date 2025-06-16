@@ -1,0 +1,151 @@
+{{ define "main" }}
+<style>
+    .list-header {
+        margin-bottom: 3rem;
+    }
+    
+    .list-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: var(--text-color);
+    }
+    
+    .list-description {
+        font-size: 1.1rem;
+        color: #666;
+    }
+    
+    .post-list {
+        list-style: none;
+    }
+    
+    .post-item {
+        margin-bottom: 2.5rem;
+        padding-bottom: 2.5rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .post-item:last-child {
+        border-bottom: none;
+    }
+    
+    .post-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .post-meta {
+        color: #666;
+        font-size: 0.9rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .post-summary {
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 0.5rem;
+    }
+    
+    .read-more {
+        font-weight: 500;
+        color: var(--accent-color);
+    }
+    
+    .pagination {
+        margin-top: 3rem;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        align-items: center;
+    }
+    
+    .pagination a,
+    .pagination span {
+        padding: 0.5rem 1rem;
+        border: 1px solid var(--border-color);
+        border-radius: 4px;
+        color: var(--text-color);
+    }
+    
+    .pagination a:hover {
+        background-color: var(--light-gray);
+        text-decoration: none;
+    }
+    
+    .pagination .active {
+        background-color: var(--accent-color);
+        color: white;
+        border-color: var(--accent-color);
+    }
+    
+    @media (max-width: 768px) {
+        .list-title {
+            font-size: 1.75rem;
+        }
+        
+        .post-title {
+            font-size: 1.25rem;
+        }
+    }
+</style>
+
+<div class="list-header">
+    <h1 class="list-title">{{ .Title }}</h1>
+    {{ with .Description }}
+    <p class="list-description">{{ . }}</p>
+    {{ end }}
+</div>
+
+{{ $paginator := .Paginate .Pages }}
+
+<ul class="post-list">
+    {{ range $paginator.Pages }}
+    <li class="post-item">
+        <h2 class="post-title">
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </h2>
+        <div class="post-meta">
+            <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+                {{ .Date.Format "January 2, 2006" }}
+            </time>
+            {{ if .Params.categories }}
+            &middot;
+            {{ range $i, $e := .Params.categories }}
+                {{- if $i -}}, {{ end }}
+                <a href="{{ "categories/" | relURL }}{{ . | urlize }}">{{ . }}</a>
+            {{- end }}
+            {{ end }}
+            {{ if .Params.tags }}
+            &middot;
+            {{ range $i, $e := .Params.tags }}
+                {{- if $i -}}, {{ end }}
+                <a href="{{ "tags/" | relURL }}{{ . | urlize }}">#{{ . }}</a>
+            {{- end }}
+            {{ end }}
+        </div>
+        <div class="post-summary">
+            {{ .Summary }}
+        </div>
+        <a href="{{ .Permalink }}" class="read-more">Read more →</a>
+    </li>
+    {{ end }}
+</ul>
+
+{{ if gt $paginator.TotalPages 1 }}
+<nav class="pagination">
+    {{ if $paginator.HasPrev }}
+    <a href="{{ $paginator.Prev.URL }}">← Previous</a>
+    {{ else }}
+    <span>← Previous</span>
+    {{ end }}
+    
+    <span class="active">{{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}</span>
+    
+    {{ if $paginator.HasNext }}
+    <a href="{{ $paginator.Next.URL }}">Next →</a>
+    {{ else }}
+    <span>Next →</span>
+    {{ end }}
+</nav>
+{{ end }}
+{{ end }}

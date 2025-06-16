@@ -1,0 +1,32 @@
+# Hugo default output directory
+/public/
+/resources/_gen/
+
+# Hugo executable
+/hugo
+/hugo.exe
+
+# Temporary files
+*.tmp
+*.swp
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+
+# Node modules (if using any JS tools)
+node_modules/
+
+# Environment variables
+.env
+.env.local

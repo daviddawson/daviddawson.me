@@ -1,0 +1,4 @@
+name = "Blog Theme"
+license = "MIT"
+description = "A simple blog theme for David Dawson's site"
+min_version = "0.110.0"

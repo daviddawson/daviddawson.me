@@ -1,0 +1,65 @@
+<header class="site-header">
+    <style>
+        .site-header {
+            background-color: var(--bg-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .site-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+        
+        .site-title:hover {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        
+        .site-nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .site-nav a {
+            color: var(--text-color);
+            font-weight: 500;
+        }
+        
+        .site-nav a:hover {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .site-nav {
+                gap: 1rem;
+            }
+        }
+    </style>
+    
+    <div class="container">
+        <div class="header-content">
+            <a href="{{ .Site.BaseURL }}" class="site-title">{{ .Site.Title }}</a>
+            <nav class="site-nav">
+                {{ range .Site.Menus.main }}
+                <a href="{{ .URL }}">{{ .Name }}</a>
+                {{ end }}
+            </nav>
+        </div>
+    </div>
+</header>

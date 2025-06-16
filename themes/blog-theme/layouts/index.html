@@ -1,0 +1,140 @@
+{{ define "main" }}
+<style>
+    .hero {
+        text-align: center;
+        padding: 3rem 0;
+        margin-bottom: 3rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--text-color);
+    }
+    
+    .hero p {
+        font-size: 1.25rem;
+        color: #666;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .recent-posts {
+        margin-bottom: 3rem;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+        margin-bottom: 2rem;
+        color: var(--text-color);
+        border-bottom: 2px solid var(--accent-color);
+        padding-bottom: 0.5rem;
+        display: inline-block;
+    }
+    
+    .post-list {
+        list-style: none;
+    }
+    
+    .post-item {
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .post-item:last-child {
+        border-bottom: none;
+    }
+    
+    .post-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .post-meta {
+        color: #666;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .post-summary {
+        color: #555;
+        line-height: 1.6;
+    }
+    
+    .view-all {
+        text-align: center;
+        margin-top: 2rem;
+    }
+    
+    .view-all a {
+        display: inline-block;
+        padding: 0.75rem 2rem;
+        background-color: var(--accent-color);
+        color: white;
+        border-radius: 4px;
+        font-weight: 500;
+    }
+    
+    .view-all a:hover {
+        background-color: #5aa05a;
+        text-decoration: none;
+    }
+    
+    @media (max-width: 768px) {
+        .hero h1 {
+            font-size: 2rem;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+        }
+        
+        .post-title {
+            font-size: 1.25rem;
+        }
+    }
+</style>
+
+<section class="hero">
+    <h1>{{ .Site.Title }}</h1>
+    {{ with .Site.Params.description }}
+    <p>{{ . }}</p>
+    {{ end }}
+</section>
+
+<section class="recent-posts">
+    <h2 class="section-title">Recent Posts</h2>
+    <ul class="post-list">
+        {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") 5 }}
+        {{ range $paginator.Pages }}
+        <li class="post-item">
+            <h3 class="post-title">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </h3>
+            <div class="post-meta">
+                <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+                    {{ .Date.Format "January 2, 2006" }}
+                </time>
+                {{ if .Params.categories }}
+                &middot;
+                {{ range $i, $e := .Params.categories }}
+                    {{- if $i -}}, {{ end }}
+                    <a href="{{ "categories/" | relURL }}{{ . | urlize }}">{{ . }}</a>
+                {{- end }}
+                {{ end }}
+            </div>
+            <div class="post-summary">
+                {{ .Summary }}
+            </div>
+        </li>
+        {{ end }}
+    </ul>
+    
+    {{ if gt $paginator.TotalPages 1 }}
+    <div class="view-all">
+        <a href="{{ "posts/" | relURL }}">View All Posts</a>
+    </div>
+    {{ end }}
+</section>
+{{ end }}
