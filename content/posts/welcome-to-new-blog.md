@@ -1,10 +1,16 @@
 ---
-title: "Welcome to My New Static Blog"
-date: 2024-01-15T10:00:00Z
+title: Welcome to My New Static Blog FTW!
+date: 2024-01-15T10:00:00.000Z
 draft: false
-categories: ["Coding", "Guide"]
-tags: ["hugo", "static-site", "jamstack"]
-description: "I've migrated my WordPress blog to a static site using Hugo and Decap CMS. Here's why and how."
+categories:
+  - Coding
+  - Guide
+tags:
+  - hugo
+  - static-site
+  - jamstack
+description: I've migrated my WordPress blog to a static site using Hugo and
+  Decap CMS. Here's why and how.
 ---
 
 I've just completed migrating my blog from WordPress to a static site generator. This new setup gives me the best of both worlds: the simplicity and security of static files with the convenience of a visual editor.
