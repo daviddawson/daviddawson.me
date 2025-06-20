@@ -1,140 +1,216 @@
 {{ define "main" }}
 <style>
-    .hero {
-        text-align: center;
-        padding: 3rem 0;
+    .posts-list {
         margin-bottom: 3rem;
-    }
-    
-    .hero h1 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-        color: var(--text-color);
-    }
-    
-    .hero p {
-        font-size: 1.25rem;
-        color: #666;
-        max-width: 600px;
-        margin: 0 auto;
-    }
-    
-    .recent-posts {
-        margin-bottom: 3rem;
-    }
-    
-    .section-title {
-        font-size: 1.75rem;
-        margin-bottom: 2rem;
-        color: var(--text-color);
-        border-bottom: 2px solid var(--accent-color);
-        padding-bottom: 0.5rem;
-        display: inline-block;
-    }
-    
-    .post-list {
-        list-style: none;
     }
     
     .post-item {
         margin-bottom: 2rem;
-        padding-bottom: 2rem;
-        border-bottom: 1px solid var(--border-color);
+        padding: 0;
+        background: var(--bg-secondary);
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        overflow: hidden;
     }
     
-    .post-item:last-child {
-        border-bottom: none;
+    .post-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
+    
+    .post-content {
+        padding: 2rem;
+    }
+    
+    .post-featured-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+    }
+    
     
     .post-title {
+        font-family: 'Roboto Mono', monospace;
         font-size: 1.5rem;
+        font-weight: 600;
         margin-bottom: 0.5rem;
+        line-height: 1.3;
     }
     
-    .post-meta {
-        color: #666;
-        font-size: 0.9rem;
-        margin-bottom: 0.5rem;
-    }
-    
-    .post-summary {
-        color: #555;
-        line-height: 1.6;
-    }
-    
-    .view-all {
-        text-align: center;
-        margin-top: 2rem;
-    }
-    
-    .view-all a {
-        display: inline-block;
-        padding: 0.75rem 2rem;
-        background-color: var(--accent-color);
-        color: white;
-        border-radius: 4px;
-        font-weight: 500;
-    }
-    
-    .view-all a:hover {
-        background-color: #5aa05a;
+    .post-title a {
+        color: var(--text-primary);
         text-decoration: none;
     }
     
+    .post-title a:hover {
+        color: var(--accent);
+    }
+    
+    .post-meta {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        flex-wrap: wrap;
+    }
+    
+    .post-date {
+        color: var(--text-muted);
+    }
+    
+    .post-categories {
+        display: flex;
+        gap: 0.5rem;
+    }
+    
+    .post-category {
+        background: var(--bg-secondary);
+        color: var(--text-secondary);
+        padding: 0.2rem 0.5rem;
+        border-radius: 3px;
+        font-size: 0.8rem;
+        text-decoration: none;
+        border: 1px solid var(--border);
+    }
+    
+    .post-category:hover {
+        background: var(--accent);
+        color: white;
+        text-decoration: none;
+    }
+    
+    .post-summary {
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+    
+    .read-more {
+        color: var(--accent);
+        font-weight: 500;
+        text-decoration: none;
+    }
+    
+    .read-more:hover {
+        text-decoration: underline;
+    }
+    
+    .pagination {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 3rem;
+        align-items: center;
+    }
+    
+    .pagination a, .pagination span {
+        padding: 0.5rem 1rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        text-decoration: none;
+        background: var(--bg-primary);
+    }
+    
+    .pagination a {
+        color: var(--text-secondary);
+    }
+    
+    .pagination a:hover {
+        background: var(--accent);
+        color: white;
+        border-color: var(--accent);
+        text-decoration: none;
+    }
+    
+    .pagination .current {
+        background: var(--accent);
+        color: white;
+        border-color: var(--accent);
+    }
+    
     @media (max-width: 768px) {
-        .hero h1 {
-            font-size: 2rem;
-        }
-        
-        .hero p {
-            font-size: 1.1rem;
-        }
-        
         .post-title {
             font-size: 1.25rem;
+        }
+        
+        .post-meta {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
         }
     }
 </style>
 
-<section class="hero">
-    <h1>{{ .Site.Title }}</h1>
-    {{ with .Site.Params.description }}
-    <p>{{ . }}</p>
-    {{ end }}
-</section>
+{{ $posts := (where .Site.RegularPages "Type" "posts") }}
 
-<section class="recent-posts">
-    <h2 class="section-title">Recent Posts</h2>
-    <ul class="post-list">
-        {{ $paginator := .Paginate ((where .Site.RegularPages "Type" "posts").ByDate.Reverse) 5 }}
-        {{ range $paginator.Pages }}
-        <li class="post-item">
-            <h3 class="post-title">
+<div class="posts-list">
+    {{ $paginator := .Paginate ($posts.ByDate.Reverse) 10 }}
+    {{ range $paginator.Pages }}
+    <article class="post-item">
+        {{ $imagePath := "" }}
+        {{ if (findRE "!\\[.*?\\]\\(/images/.*?\\)" .Content) }}
+            {{ $imageMatch := findRE "/images/[^)]+\\.(jpg|jpeg|png|gif|webp)" .Content }}
+            {{ if $imageMatch }}
+                {{ $imagePath = index $imageMatch 0 }}
+            {{ end }}
+        {{ end }}
+        {{ if $imagePath }}
+        <a href="{{ .Permalink }}">
+            <img src="{{ $imagePath }}" alt="{{ .Title }}" class="post-featured-image">
+        </a>
+        {{ end }}
+        <div class="post-content">
+            <h2 class="post-title">
                 <a href="{{ .Permalink }}">{{ .Title }}</a>
-            </h3>
+            </h2>
             <div class="post-meta">
-                <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+                <time class="post-date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
                     {{ .Date.Format "January 2, 2006" }}
                 </time>
                 {{ if .Params.categories }}
-                &middot;
-                {{ range $i, $e := .Params.categories }}
-                    {{- if $i -}}, {{ end }}
-                    <a href="{{ "categories/" | relURL }}{{ . | urlize }}">{{ . }}</a>
-                {{- end }}
+                <span>•</span>
+                <div class="post-categories">
+                    {{ range .Params.categories }}
+                    <a href="{{ "categories/" | relURL }}{{ . | urlize }}" class="post-category">{{ . }}</a>
+                    {{ end }}
+                </div>
+                {{ end }}
+                {{ with .ReadingTime }}
+                <span>•</span>
+                <span>{{ . }} min read</span>
                 {{ end }}
             </div>
             <div class="post-summary">
                 {{ .Summary }}
             </div>
-        </li>
-        {{ end }}
-    </ul>
-    
-    {{ if gt $paginator.TotalPages 1 }}
-    <div class="view-all">
-        <a href="{{ "posts/" | relURL }}">View All Posts</a>
-    </div>
+            <a href="{{ .Permalink }}" class="read-more">Continue reading →</a>
+        </div>
+    </article>
     {{ end }}
-</section>
+</div>
+
+{{ if gt $paginator.TotalPages 1 }}
+<nav class="pagination">
+    {{ if $paginator.HasPrev }}
+    <a href="{{ $paginator.Prev.URL }}">&larr; Previous</a>
+    {{ end }}
+    
+    {{ range $paginator.Pagers }}
+    {{ if eq . $paginator }}
+    <span class="current">{{ .PageNumber }}</span>
+    {{ else }}
+    <a href="{{ .URL }}">{{ .PageNumber }}</a>
+    {{ end }}
+    {{ end }}
+    
+    {{ if $paginator.HasNext }}
+    <a href="{{ $paginator.Next.URL }}">Next &rarr;</a>
+    {{ end }}
+</nav>
+{{ end }}
 {{ end }}

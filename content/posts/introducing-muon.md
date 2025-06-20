@@ -3,7 +3,7 @@ title: "Introducing Muon"
 date: 2017-09-01T20:50:13+01:00
 draft: false
 categories: ["Coding"]
-tags: []
+tags: ["architecture", "ddd", "events", "muon", "technology"]
 description: "This article introduces a project I’ve been working on for the past few years in one form or another. Muon"
 slug: "introducing-muon"
 aliases:

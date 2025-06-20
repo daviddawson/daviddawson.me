@@ -2,31 +2,74 @@
 <style>
     .post-header {
         margin-bottom: 2rem;
-        padding-bottom: 2rem;
-        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid var(--border);
     }
     
     .post-title {
-        font-size: 2.5rem;
+        font-family: 'Roboto Mono', monospace;
+        font-size: 2rem;
+        font-weight: 600;
         margin-bottom: 1rem;
         line-height: 1.2;
+        color: var(--text-primary);
     }
     
     .post-meta {
-        color: #666;
-        font-size: 0.95rem;
         display: flex;
+        align-items: center;
         gap: 1rem;
+        font-size: 0.9rem;
+        color: var(--text-muted);
         flex-wrap: wrap;
     }
     
-    .post-meta time {
-        font-weight: 500;
+    .post-categories {
+        display: flex;
+        gap: 0.5rem;
+    }
+    
+    .post-category {
+        background: var(--bg-secondary);
+        color: var(--text-secondary);
+        padding: 0.2rem 0.5rem;
+        border-radius: 3px;
+        font-size: 0.8rem;
+        text-decoration: none;
+        border: 1px solid var(--border);
+    }
+    
+    .post-category:hover {
+        background: var(--accent);
+        color: white;
+        text-decoration: none;
     }
     
     .post-content {
-        font-size: 1.1rem;
-        line-height: 1.8;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 3rem;
+    }
+    
+    .post-content img {
+        max-width: 100%;
+        height: auto;
+        margin: 2rem auto;
+        display: block;
+        border-radius: var(--radius);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .post-content figure {
+        margin: 2rem 0;
+        text-align: center;
+    }
+    
+    .post-content figcaption {
+        margin-top: 0.5rem;
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        font-style: italic;
     }
     
     .post-content h1,
@@ -35,67 +78,78 @@
     .post-content h4,
     .post-content h5,
     .post-content h6 {
+        font-family: 'Roboto Mono', monospace;
         margin-top: 2rem;
         margin-bottom: 1rem;
+        color: var(--text-primary);
     }
     
     .post-content h2 {
-        font-size: 1.75rem;
-        border-bottom: 1px solid var(--border-color);
+        font-size: 1.5rem;
         padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--border);
+        margin-top: 2.5rem;
     }
     
     .post-content h3 {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
     
-    .post-content img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 4px;
-        margin: 1.5rem 0;
+    .post-content p {
+        margin-bottom: 1rem;
+        color: var(--text-secondary);
     }
     
-    .post-content blockquote {
-        border-left: 4px solid var(--accent-color);
-        padding-left: 1.5rem;
-        margin: 1.5rem 0;
-        color: #666;
-        font-style: italic;
+    .post-content a {
+        color: var(--accent);
+    }
+    
+    .post-content a:hover {
+        text-decoration: underline;
     }
     
     .post-content ul,
     .post-content ol {
-        margin-bottom: 1rem;
+        margin: 1rem 0;
         padding-left: 2rem;
     }
     
     .post-content li {
         margin-bottom: 0.5rem;
+        color: var(--text-secondary);
     }
     
     .post-content table {
         width: 100%;
         border-collapse: collapse;
         margin: 1.5rem 0;
+        background: var(--bg-primary);
+        border: 1px solid var(--border);
     }
     
     .post-content th,
     .post-content td {
-        border: 1px solid var(--border-color);
+        border: 1px solid var(--border);
         padding: 0.75rem;
         text-align: left;
     }
     
     .post-content th {
-        background-color: var(--light-gray);
+        background: var(--bg-secondary);
         font-weight: 600;
     }
     
     .post-tags {
-        margin-top: 3rem;
+        margin-top: 2rem;
         padding-top: 1.5rem;
-        border-top: 1px solid var(--border-color);
+        border-top: 1px solid var(--border);
+    }
+    
+    .post-tags h4 {
+        margin-bottom: 1rem;
+        font-family: 'Roboto Mono', monospace;
+        font-size: 1rem;
+        color: var(--text-primary);
     }
     
     .tag-list {
@@ -105,15 +159,17 @@
     }
     
     .tag-list a {
-        display: inline-block;
-        padding: 0.25rem 0.75rem;
-        background-color: var(--light-gray);
-        border-radius: 4px;
-        font-size: 0.9rem;
+        background: var(--bg-secondary);
+        color: var(--text-secondary);
+        padding: 0.25rem 0.5rem;
+        border-radius: 3px;
+        font-size: 0.8rem;
+        text-decoration: none;
+        border: 1px solid var(--border);
     }
     
     .tag-list a:hover {
-        background-color: var(--accent-color);
+        background: var(--accent);
         color: white;
         text-decoration: none;
     }
@@ -121,7 +177,7 @@
     .post-nav {
         margin-top: 3rem;
         padding-top: 2rem;
-        border-top: 1px solid var(--border-color);
+        border-top: 1px solid var(--border);
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 2rem;
@@ -130,6 +186,17 @@
     .post-nav-item {
         display: flex;
         flex-direction: column;
+        padding: 1rem;
+        background: var(--bg-secondary);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+    }
+    
+    .post-nav-item:hover {
+        background: var(--accent);
+        color: white;
     }
     
     .post-nav-item.next {
@@ -138,18 +205,45 @@
     }
     
     .post-nav-label {
-        font-size: 0.9rem;
-        color: #666;
+        font-size: 0.8rem;
+        color: var(--text-muted);
         margin-bottom: 0.25rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+    
+    .post-nav-item:hover .post-nav-label {
+        color: rgba(255,255,255,0.8);
+    }
+    
+    .post-nav-title {
+        font-weight: 500;
+        line-height: 1.3;
+    }
+    
+    .back-to-home {
+        margin-bottom: 2rem;
+    }
+    
+    .back-to-home a {
+        color: var(--accent);
+        text-decoration: none;
+        font-size: 0.9rem;
+    }
+    
+    .back-to-home a:hover {
+        text-decoration: underline;
     }
     
     @media (max-width: 768px) {
         .post-title {
-            font-size: 2rem;
+            font-size: 1.5rem;
         }
         
-        .post-content {
-            font-size: 1rem;
+        .post-meta {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
         }
         
         .post-nav {
@@ -164,6 +258,10 @@
     }
 </style>
 
+<div class="back-to-home">
+    <a href="/">← Back to home</a>
+</div>
+
 <article class="post">
     <header class="post-header">
         <h1 class="post-title">{{ .Title }}</h1>
@@ -172,16 +270,15 @@
                 {{ .Date.Format "January 2, 2006" }}
             </time>
             {{ if .Params.categories }}
-            <span>&middot;</span>
-            <span>
-                {{ range $i, $e := .Params.categories }}
-                    {{- if $i -}}, {{ end }}
-                    <a href="{{ "categories/" | relURL }}{{ . | urlize }}">{{ . }}</a>
-                {{- end }}
-            </span>
+            <span>•</span>
+            <div class="post-categories">
+                {{ range .Params.categories }}
+                <a href="{{ "categories/" | relURL }}{{ . | urlize }}" class="post-category">{{ . }}</a>
+                {{ end }}
+            </div>
             {{ end }}
             {{ with .ReadingTime }}
-            <span>&middot;</span>
+            <span>•</span>
             <span>{{ . }} min read</span>
             {{ end }}
         </div>
@@ -193,9 +290,10 @@
     
     {{ if .Params.tags }}
     <div class="post-tags">
+        <h4>Tags</h4>
         <div class="tag-list">
             {{ range .Params.tags }}
-            <a href="{{ "tags/" | relURL }}{{ . | urlize }}">#{{ . }}</a>
+            <a href="{{ "tags/" | relURL }}{{ . | urlize }}"># {{ . }}</a>
             {{ end }}
         </div>
     </div>
@@ -204,19 +302,19 @@
 
 <nav class="post-nav">
     {{ with .PrevInSection }}
-    <div class="post-nav-item prev">
-        <span class="post-nav-label">← Previous</span>
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
-    </div>
+    <a href="{{ .Permalink }}" class="post-nav-item prev">
+        <div class="post-nav-label">← Previous</div>
+        <div class="post-nav-title">{{ .Title }}</div>
+    </a>
     {{ else }}
     <div></div>
     {{ end }}
     
     {{ with .NextInSection }}
-    <div class="post-nav-item next">
-        <span class="post-nav-label">Next →</span>
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
-    </div>
+    <a href="{{ .Permalink }}" class="post-nav-item next">
+        <div class="post-nav-label">Next →</div>
+        <div class="post-nav-title">{{ .Title }}</div>
+    </a>
     {{ end }}
 </nav>
 {{ end }}

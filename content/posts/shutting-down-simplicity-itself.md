@@ -2,8 +2,8 @@
 title: "Shutting down Simplicity Itself"
 date: 2017-09-01T20:57:40+01:00
 draft: false
-categories: []
-tags: []
+categories: ["Uncategorised"]
+tags: ["commercial", "oldtimes", "russmiles"]
 description: "Almost 5 years ago, Russ Miles and I embarked on a wild journey with a bright new company, Simplicity Itself."
 slug: "shutting-down-simplicity-itself"
 aliases:

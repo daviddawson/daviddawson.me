@@ -27,3 +27,8 @@ theme = 'blog-theme'
 
 [permalinks]
   posts = '/:year/:month/:slug/'
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+ignoreLogs = ['warning-goldmark-raw-html']

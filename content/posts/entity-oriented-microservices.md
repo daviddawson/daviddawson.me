@@ -3,7 +3,7 @@ title: "Entity Oriented Microservices"
 date: 2021-09-12T21:42:33+01:00
 draft: false
 categories: ["Guide"]
-tags: []
+tags: ["blog", "ddd", "events", "evergreen", "technology"]
 description: "![Image](/images/knowledge.jpg)"
 slug: "entity-oriented-microservices"
 aliases:

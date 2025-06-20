@@ -3,7 +3,7 @@ title: "Simplicity in Grails Design – All Hail the Command Object"
 date: 2013-09-01T21:26:10+01:00
 draft: false
 categories: ["Coding"]
-tags: []
+tags: ["blog", "grails", "groovy", "technology"]
 description: "This is a follow on to [Simplicity in Web Architecture – Beware the Stateless Service](http://daviddawson.me/blog/2013/03/28/stateless-services-are-evil.html)"
 slug: "simplicity-in-grails-design-all-hail-the-command-object"
 aliases:

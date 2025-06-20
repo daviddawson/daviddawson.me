@@ -3,7 +3,7 @@ title: "Development by Slogan with DRY: Part 2, The Tower of Coupling"
 date: 2015-09-01T21:33:47+01:00
 draft: false
 categories: ["Philosophy"]
-tags: []
+tags: ["best-practices", "dry", "grails", "technology"]
 description: "Copy and Paste, it’s bad. We have this drilled into us as received knowledge. We must build abstractions to avoid copying code, or concepts that seem similar, a..."
 slug: "development-by-slogan-with-dry-part-2-the-tower-of-coupling"
 aliases:

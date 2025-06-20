@@ -3,7 +3,7 @@ title: "Styles of Event Architecture"
 date: 2021-09-15T08:36:11+01:00
 draft: false
 categories: ["Philosophy"]
-tags: []
+tags: ["architecture", "blog", "ddd", "events", "evergreen", "muon", "tech", "technology"]
 description: "This article was spawned from a conversation I had with Ben Wilcock on his article about building an event sourced system on Cloud Foundry using Axon, which you..."
 slug: "styles-of-event-architecture"
 aliases:

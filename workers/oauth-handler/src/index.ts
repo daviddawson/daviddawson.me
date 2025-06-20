@@ -72,7 +72,8 @@ export default {
         }),
       });
 
-      const tokenData = await tokenResponse.json() as any;
+      const responseText = await tokenResponse.text();
+      const tokenData = JSON.parse(responseText);
       
       if (tokenData.error) {
         return new Response(`GitHub OAuth error: ${tokenData.error_description}`, { 
@@ -88,7 +89,7 @@ export default {
         },
       });
 
-      const userData = await userResponse.json() as any;
+      // const userData = await userResponse.json() as any;
 
       const successHtml = `
         <!DOCTYPE html>
@@ -96,20 +97,33 @@ export default {
         <head>
           <title>Authorization Success</title>
           <script>
-            const authData = {
-              token: '${tokenData.access_token}',
-              provider: 'github'
-            };
-            
-            if (window.opener) {
-              window.opener.postMessage(
-                'authorization:github:success:' + JSON.stringify(authData),
-                '*'
-              );
-              window.close();
-            } else {
-              document.getElementById('token').textContent = '${tokenData.access_token}';
-            }
+            (function() {
+              function postAuthMessage() {
+                if (window.opener) {
+                  // Decap CMS expects this exact format
+                  const token = '${tokenData.access_token}';
+                  
+                  // Send authorizing message first
+                  window.opener.postMessage('authorizing:github', '*');
+                  
+                  // Then send success with token
+                  window.opener.postMessage(
+                    'authorization:github:success:' + JSON.stringify({ token: token }),
+                    '*'
+                  );
+                  
+                  setTimeout(() => window.close(), 1000);
+                } else {
+                  document.getElementById('token').textContent = '${tokenData.access_token}';
+                }
+              }
+              
+              if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', postAuthMessage);
+              } else {
+                postAuthMessage();
+              }
+            })();
           </script>
         </head>
         <body>

@@ -1,65 +1,326 @@
 <header class="site-header">
     <style>
-        .site-header {
-            background-color: var(--bg-color);
-            border-bottom: 1px solid var(--border-color);
-            padding: 1.5rem 0;
-            margin-bottom: 2rem;
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         
-        .header-content {
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+            50% { opacity: 1; transform: scale(1) rotate(180deg); }
+        }
+        
+        .site-header {
+            background: linear-gradient(135deg, #ffffff 0%, #e3f2fd 25%, #bbdefb 50%, #e3f2fd 75%, #ffffff 100%);
+            background-size: 400% 400%;
+            animation: gradient-shift 15s ease infinite;
+            border-bottom: 1px solid transparent;
+            padding: 2rem 0;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(33, 150, 243, 0.1);
+        }
+        
+        .site-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(33, 150, 243, 0.05) 0%, transparent 70%);
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        .site-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            opacity: 0.5;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .site-branding {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            position: relative;
         }
         
         .site-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--text-color);
+            font-family: 'Roboto Mono', monospace;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
             text-decoration: none;
+            position: relative;
+            transition: all 0.3s ease;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .site-title::before {
+            content: '< ';
+            color: var(--accent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .site-title::after {
+            content: ' />';
+            color: var(--accent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .site-title:hover::before,
+        .site-title:hover::after {
+            opacity: 1;
         }
         
         .site-title:hover {
-            color: var(--accent-color);
+            color: var(--accent);
             text-decoration: none;
+            transform: translateY(-2px);
+            text-shadow: 2px 4px 8px rgba(33, 150, 243, 0.2);
         }
         
-        .site-nav {
+        .site-tagline {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-style: italic;
+            opacity: 0.8;
+            position: absolute;
+            bottom: -1.2rem;
+            left: 2rem;
+            white-space: nowrap;
+        }
+        
+        .header-nav {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
+            align-items: center;
         }
         
-        .site-nav a {
-            color: var(--text-color);
+        .nav-link {
+            color: var(--text-secondary);
             font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
         
-        .site-nav a:hover {
-            color: var(--accent-color);
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(33, 150, 243, 0.1);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.4s ease, height 0.4s ease;
+        }
+        
+        .nav-link:hover::before {
+            width: 100px;
+            height: 100px;
+        }
+        
+        .nav-link:hover {
+            color: var(--accent);
+            transform: translateY(-2px);
             text-decoration: none;
+        }
+        
+        .nav-link.edit-btn {
+            background: linear-gradient(135deg, var(--accent) 0%, #1565c0 100%);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            font-weight: 600;
+            box-shadow: 0 2px 10px rgba(33, 150, 243, 0.3);
+        }
+        
+        .nav-link.edit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 20px rgba(33, 150, 243, 0.4);
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-left: 2rem;
+            padding-left: 2rem;
+            border-left: 1px solid var(--border);
+        }
+        
+        .social-link {
+            color: var(--text-muted);
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .social-link::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent), #1565c0);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+        
+        .social-link:hover {
+            color: white;
+            transform: translateY(-3px) rotate(5deg);
+            box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+            border-color: transparent;
+        }
+        
+        .social-link:hover::before {
+            opacity: 1;
+        }
+        
+        .social-link svg {
+            transition: transform 0.3s ease;
+        }
+        
+        .social-link:hover svg {
+            transform: scale(1.1);
+        }
+        
+        /* Floating decorative elements */
+        .header-decoration {
+            position: absolute;
+            pointer-events: none;
+        }
+        
+        .decoration-1 {
+            top: 10%;
+            left: 5%;
+            width: 20px;
+            height: 20px;
+            background: rgba(33, 150, 243, 0.2);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .decoration-2 {
+            top: 60%;
+            right: 10%;
+            width: 15px;
+            height: 15px;
+            background: rgba(33, 150, 243, 0.15);
+            border-radius: 50%;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+        
+        .decoration-3 {
+            bottom: 20%;
+            left: 15%;
+            width: 8px;
+            height: 8px;
+            background: rgba(33, 150, 243, 0.3);
+            border-radius: 50%;
+            animation: sparkle 3s ease-in-out infinite;
         }
         
         @media (max-width: 768px) {
-            .header-content {
+            .site-header {
+                padding: 1.5rem 0;
+            }
+            
+            .header-container {
                 flex-direction: column;
+                gap: 1.5rem;
+                padding: 0 15px;
+            }
+            
+            .site-title {
+                font-size: 1.5rem;
+            }
+            
+            .site-tagline {
+                position: static;
+                margin-top: 0.5rem;
+            }
+            
+            .header-nav {
                 gap: 1rem;
             }
             
-            .site-nav {
-                gap: 1rem;
+            .social-links {
+                margin-left: 0;
+                padding-left: 0;
+                border-left: none;
+            }
+            
+            .header-decoration {
+                display: none;
             }
         }
     </style>
     
-    <div class="container">
-        <div class="header-content">
+    <div class="header-container">
+        <div class="header-decoration decoration-1"></div>
+        <div class="header-decoration decoration-2"></div>
+        <div class="header-decoration decoration-3"></div>
+        
+        <div class="site-branding">
             <a href="{{ .Site.BaseURL }}" class="site-title">{{ .Site.Title }}</a>
-            <nav class="site-nav">
-                {{ range .Site.Menus.main }}
-                <a href="{{ .URL }}">{{ .Name }}</a>
-                {{ end }}
-            </nav>
+            <span class="site-tagline">Code, philosophy, and the art of building</span>
         </div>
+        
+        <nav class="header-nav">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/about/" class="nav-link">About</a>
+            
+            <div class="social-links">
+                <a href="https://twitter.com/davidthecoder" class="social-link" title="Twitter">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/daviddawson" class="social-link" title="GitHub">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+            </div>
+        </nav>
     </div>
 </header>

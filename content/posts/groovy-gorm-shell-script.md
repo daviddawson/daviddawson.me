@@ -3,7 +3,7 @@ title: "Groovy Gorm Shell Script"
 date: 2021-09-14T17:09:18+01:00
 draft: false
 categories: ["Coding"]
-tags: []
+tags: ["blog", "gorm", "groovy"]
 description: "Gorm is the data access layer in Grails. I’ve been mostly away from Grails since 3.0 landed (for reasons)."
 slug: "groovy-gorm-shell-script"
 aliases:

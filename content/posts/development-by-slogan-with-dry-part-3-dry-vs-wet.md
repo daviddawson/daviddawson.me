@@ -3,7 +3,7 @@ title: "Development by Slogan with DRY: Part 3, DRY vs WET"
 date: 2015-09-01T21:35:20+01:00
 draft: false
 categories: ["Philosophy"]
-tags: []
+tags: ["best-practices", "dry", "grails", "technology"]
 description: "Hopefully, you now understand some of my pain when I’m arguing against DRY, and arguing against deep abstractions. The original definition of DRY though, Single..."
 slug: "development-by-slogan-with-dry-part-3-dry-vs-wet"
 aliases:

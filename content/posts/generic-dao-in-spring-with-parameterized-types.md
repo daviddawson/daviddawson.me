@@ -3,7 +3,7 @@ title: "Generic DAO in Spring with Parameterized Types"
 date: 2017-09-01T20:43:28+01:00
 draft: false
 categories: ["Coding"]
-tags: []
+tags: ["blog", "ddd", "events", "java", "muon", "tech", "technology"]
 description: "I’m currently finishing cleaning up a new application framework built upon the Muon communications toolkit, called **Newton**"
 slug: "generic-dao-in-spring-with-parameterized-types"
 aliases:

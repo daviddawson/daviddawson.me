@@ -3,7 +3,7 @@ title: "Development by Slogan with DRY: Part 1, Really DRY"
 date: 2015-09-01T21:30:37+01:00
 draft: false
 categories: ["Philosophy"]
-tags: []
+tags: ["best-practices", "dry", "grails", "technology"]
 description: "I recently had a thought provoking exchange on Twitter with Luke Daley who is a Gradle developer, creator of the Ratpack web framework and all around awesome fe..."
 slug: "development-by-slogan-with-dry-part-1-really-dry"
 aliases:

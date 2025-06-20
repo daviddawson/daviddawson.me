@@ -3,7 +3,7 @@ title: "A Microservices Developer API using …. Make"
 date: 2021-09-01T21:01:30+01:00
 draft: false
 categories: ["Coding"]
-tags: []
+tags: ["devops", "make", "tech"]
 description: "This article was originally posted at simplicityitself.com."
 slug: "a-microservices-developer-api-using-make"
 aliases:

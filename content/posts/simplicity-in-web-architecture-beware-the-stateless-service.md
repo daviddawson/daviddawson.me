@@ -3,7 +3,7 @@ title: "Simplicity in Web Architecture – Beware the Stateless Service"
 date: 2013-09-01T21:22:15+01:00
 draft: false
 categories: ["Coding"]
-tags: []
+tags: ["architecture", "groovy", "services"]
 description: "This article is related to my recent talk at the London Groovy/ Grails User Group which you can see at [SkillsMatter](http://skillsmatter.com/podcast/groovy-gra..."
 slug: "simplicity-in-web-architecture-beware-the-stateless-service"
 aliases:

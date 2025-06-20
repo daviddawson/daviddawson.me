@@ -3,7 +3,7 @@ title: "Sharing Code Between Microservices?"
 date: 2015-09-01T21:38:22+01:00
 draft: false
 categories: ["Coding"]
-tags: []
+tags: ["architecture", "blog", "ddd", "dry", "microservices", "technology"]
 description: "My good friend Peter Ledbrook has been pondering the question [how can we share code between microservices](http://blog.cacoethes.co.uk/software/code-reuse-in-m..."
 slug: "sharing-code-between-microservices"
 aliases:

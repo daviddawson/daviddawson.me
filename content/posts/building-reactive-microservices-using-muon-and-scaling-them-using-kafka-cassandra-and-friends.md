@@ -3,7 +3,7 @@ title: "Building Reactive Microservices using Muon and scaling them using Kafka,
 date: 2017-09-01T20:32:36+01:00
 draft: false
 categories: ["Coding"]
-tags: []
+tags: ["blog", "ddd", "events", "muon", "tech"]
 description: "**TL/DR**"
 slug: "building-reactive-microservices-using-muon-and-scaling-them-using-kafka-cassandra-and-friends"
 aliases:
