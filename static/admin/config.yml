@@ -1,8 +1,10 @@
-# GitHub backend configuration for Sveltia CMS
-# This configuration works with GitHub Pages without any Netlify involvement
+# GitHub backend configuration with Cloudflare Workers OAuth
 backend:
-  name: git-gateway
+  name: github
+  repo: daviddawson/daviddawson.me
   branch: main
+  base_url: https://decap-oauth.me-a09.workers.dev
+  auth_endpoint: auth
   
 media_folder: "static/images"
 public_folder: "/images"

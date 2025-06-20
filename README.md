@@ -1,98 +1,92 @@
-# daviddawson.me
+# David Dawson's Blog
 
-Personal blog hosted on GitHub Pages at https://daviddawson.github.io/daviddawson.me
+A Hugo-based static blog with Decap CMS for content management, hosted on Cloudflare Pages with a self-hosted OAuth handler on Cloudflare Workers.
 
-## Sveltia CMS Setup (No Netlify Required)
+## Quick Start
 
-This site uses Sveltia CMS - a modern, GitHub-friendly alternative to Decap CMS that works perfectly with GitHub Pages without any Netlify dependencies.
+### 1. Deploy to Cloudflare Pages
 
-### Quick Setup
+1. Fork this repository
+2. Go to [Cloudflare Pages](https://pages.cloudflare.com)
+3. Create a new project and connect your GitHub repo
+4. Build settings:
+   - Framework preset: `Hugo`
+   - Build command: `hugo --gc --minify`
+   - Build output: `public`
+   - Environment variable: `HUGO_VERSION = 0.135.0`
 
-1. **Run the setup script**:
-   ```bash
-   ./cloudflare-oauth-setup.sh
-   ```
-   This will guide you through setting up OAuth authentication using Cloudflare Workers (free tier).
+### 2. Set up OAuth for the CMS
 
-2. **Or follow manual setup** in `GITHUB_PAGES_CMS_SETUP.md`
+See [CLOUDFLARE_WORKERS_SETUP.md](CLOUDFLARE_WORKERS_SETUP.md) for detailed instructions on deploying the OAuth handler.
 
-### Why Sveltia CMS?
+### 3. Access the CMS
 
-- Drop-in replacement for Decap CMS
-- Better GitHub integration
-- Modern UI and performance
-- Works seamlessly with GitHub Pages
-- No vendor lock-in to Netlify
+Once deployed, access your CMS at: `https://your-site.pages.dev/admin/`
 
-### Current Configuration
-
-- **CMS**: Sveltia CMS
-- **Backend**: GitHub
-- **Authentication**: External OAuth (needs to be configured)
-- **Hosting**: GitHub Pages
-
-### OAuth Setup Options
-
-Choose one of these free options:
-
-1. **Cloudflare Workers** (Recommended)
-   - Free tier available
-   - Fast and reliable
-   - Easy setup with provided script
-
-2. **Render.com**
-   - Free tier with 750 hours/month
-   - Simple deployment
-
-3. **Railway**
-   - Free trial available
-   - Good performance
-
-### Managing Editor Access
-
-Access is controlled by GitHub repository permissions:
-
-1. Go to: https://github.com/daviddawson/daviddawson.me/settings/access
-2. Add collaborators with "Write" permission
-3. They can log in with their GitHub account
-
-### Local Development
+## Local Development
 
 ```bash
-# Start Hugo development server
+# Install Hugo
+brew install hugo  # macOS
+# or download from https://gohugo.io/
+
+# Clone the repo
+git clone https://github.com/daviddawson/daviddawson.me.git
+cd daviddawson.me
+
+# Run locally
 hugo server -D
 
-# Access CMS at http://localhost:1313/admin/
-# Click "Work with local repository" for local editing
+# Build for production
+hugo --gc --minify
 ```
 
-### Testing the CMS
-
-1. Open `test-cms.html` in your browser to check configuration status
-2. Visit `/admin/` to access the CMS
-3. Log in with your GitHub account
-
-### Project Structure
+## Project Structure
 
 ```
-daviddawson.me/
-├── static/
-│   └── admin/
-│       ├── index.html    # Sveltia CMS loader
-│       └── config.yml    # CMS configuration
-├── content/              # Blog posts and pages
-├── GITHUB_PAGES_CMS_SETUP.md  # Detailed setup guide
-└── cloudflare-oauth-setup.sh  # Automated setup script
+.
+├── content/          # Blog posts and pages
+├── static/           # Static assets
+│   ├── admin/       # Decap CMS files
+│   └── images/      # Blog images
+├── themes/          # Hugo theme
+├── workers/         # Cloudflare Workers code
+│   └── oauth-handler/  # OAuth handler for CMS
+└── hugo.toml        # Hugo configuration
 ```
 
-### Troubleshooting
+## Writing Content
 
-- **"Not Found" error**: OAuth backend not configured - run setup script
-- **"Authentication Failed"**: Check OAuth app credentials
-- **CORS errors**: Verify allowed domains in OAuth backend
+### Option 1: Visual CMS
+Access `/admin/` on your deployed site to use the visual editor.
 
-### Resources
+### Option 2: Git
+Create markdown files in `content/posts/` with this format:
 
-- [Sveltia CMS Documentation](https://github.com/sveltia/sveltia-cms)
-- [Cloudflare Workers](https://workers.cloudflare.com/)
-- [GitHub OAuth Apps](https://docs.github.com/en/apps/oauth-apps)
+```markdown
+---
+title: "Your Post Title"
+date: 2024-01-01T12:00:00Z
+draft: false
+categories: ["tech"]
+tags: ["hugo", "static-site"]
+---
+
+Your content here...
+```
+
+## Deployment
+
+The site automatically deploys to Cloudflare Pages when you push to the `main` branch.
+
+## No External Dependencies
+
+This setup is completely self-hosted:
+- Static site on Cloudflare Pages (free tier)
+- OAuth handler on Cloudflare Workers (free tier)
+- No external OAuth services needed
+- No databases required
+
+## License
+
+MIT
