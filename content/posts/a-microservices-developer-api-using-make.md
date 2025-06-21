@@ -6,7 +6,7 @@ categories: ["Coding"]
 tags: ["devops", "make", "tech"]
 description: "This article was originally posted at simplicityitself.com."
 slug: "a-microservices-developer-api-using-make"
-aliases:
+aliases: ['/coding/a-microservices-developer-api-using-make/', '/a-microservices-developer-api-using-make/']
   - "/coding/a-microservices-developer-api-using-make/"
 ---
 
@@ -14,7 +14,7 @@ This article was originally posted at simplicityitself.com.
 
 Simplicity Itself has now closed, and so I have moved my articles here.
 
-If you would like to read up on why it closed – See [here](http://daviddawson.me/blog/2017/02/04/simplicity-itself-shutdown.html)
+If you would like to read up on why it closed – See [here](/2017/02/simplicity-itself-shutdown/)
 
 Gradle, NPM, Lein, Maven, Docker, Ansible, Kubernetes, Grunt …​ The list goes on (and on, and on). Developer tooling, constantly re-invented for the modern age.
 

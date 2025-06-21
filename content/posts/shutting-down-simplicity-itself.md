@@ -6,7 +6,7 @@ categories: ["Uncategorised"]
 tags: ["commercial", "oldtimes", "russmiles"]
 description: "Almost 5 years ago, Russ Miles and I embarked on a wild journey with a bright new company, Simplicity Itself."
 slug: "shutting-down-simplicity-itself"
-aliases:
+aliases: ['/uncategorised/shutting-down-simplicity-itself/', '/shutting-down-simplicity-itself/']
   - "/uncategorised/shutting-down-simplicity-itself/"
 ---
 
@@ -52,7 +52,7 @@ It’s been a fun ride, but it’s done now.
 
 ## Who will help me with Microservices now?
 
-**I’m now available as a freelancer**. So, [get in contact](http://daviddawson.me/hireme.html) and I’ll be happy to help you
+**I’m now available as a freelancer**. So, [get in contact](/hireme/) and I’ll be happy to help you
 
 ## What are you going to do next?
 
@@ -66,7 +66,7 @@ My background before SI was as a freelancer, I’ve been permanently employed fo
 
 So, I’m back to freelancing. I’ll be investing my time heavily into Muon and building products with it with some interesting clients.
 
-If you need Microservices, Cloud, dev process or IoT help [give me a call](http://daviddawson.me/hireme.html)
+If you need Microservices, Cloud, dev process or IoT help [give me a call](/hireme/)
 
 ## Should I start a consultancy?
 

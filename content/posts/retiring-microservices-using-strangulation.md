@@ -4,7 +4,7 @@ date: 2015-09-01T00:00:00Z
 categories: ["philosophy"]
 tags: ["architecture", "blog", "ddd", "dry", "events", "microservices"]
 description: "No programmer likes to plan for their work to be taken offline and shutdown, but part of good antifragile thinking is allowing things that aren't successful, to end."
-aliases:
+aliases: ['/philosophy/retiring-microservices-using-strangulation/', '/retiring-microservices-using-strangulation/']
   - /philosophy/retiring-microservices-using-strangulation/
   - /microservices%20and%20reactive/2015/02/16/retiring-microservices-using-strangulation.html
 ---

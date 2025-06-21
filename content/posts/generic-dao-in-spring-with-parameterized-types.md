@@ -6,7 +6,7 @@ categories: ["Coding"]
 tags: ["blog", "ddd", "events", "java", "muon", "tech", "technology"]
 description: "I’m currently finishing cleaning up a new application framework built upon the Muon communications toolkit, called **Newton**"
 slug: "generic-dao-in-spring-with-parameterized-types"
-aliases:
+aliases: ['/coding/generic-dao-in-spring-with-parameterized-types/', '/generic-dao-in-spring-with-parameterized-types/']
   - "/coding/generic-dao-in-spring-with-parameterized-types/"
 ---
 

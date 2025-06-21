@@ -6,7 +6,7 @@ categories: ["Guide"]
 tags: ["blog", "ddd", "events", "evergreen", "technology"]
 description: "![Image](/images/knowledge.jpg)"
 slug: "entity-oriented-microservices"
-aliases:
+aliases: ['/guide/entity-oriented-microservices/', '/entity-oriented-microservices/']
   - "/guide/entity-oriented-microservices/"
 ---
 
@@ -14,7 +14,7 @@ aliases:
 
 Recently I read an article on the concept of [Entity Services](https://www.infoq.com/news/2017/12/entity-services-antipattern?utm_source=infoq&utm_medium=popular_widget&utm_campaign=popular_content_list&utm_content=homepage) over at InfoQ by Michael Nygard (and written up by Jan Stanberg). I’m not attempting to comment deeply on the article itself, only on the subject.
 
-This is a topic I’ve spent an inordinate amount of time on over the years, you can see my thoughts in [many](http://daviddawson.me/blog/2017/07/10/styles-of-event-architecture.html) a [blog](http://daviddawson.me/blog/2017/08/13/build-reactive-polyglot-muon.html) post and [talk](https://skillsmatter.com/members/davidthecoder#skillscasts).
+This is a topic I’ve spent an inordinate amount of time on over the years, you can see my thoughts in [many](/2017/07/styles-of-event-architecture/) a [blog](/2017/08/build-reactive-polyglot-muon/) post and [talk](https://skillsmatter.com/members/davidthecoder#skillscasts).
 
 In talk form, I give a rundown of the problem and the issues it will create [here](https://youtu.be/OFV-1cpjQRk) while introducing the Muon project.
 
@@ -42,7 +42,7 @@ Now, the fact that a DDD approach _can_ yield good Microservices designs, that I
 
 ## Entity Oriented Microservices
 
-I very much see Entity services as a bad thing. Objects in the large just play into the fact that OO approaches have, given their originally stated aims, failed. OO abstractions that encapsulate state, identity and operation have led to poor designs in all levels of software. Instead we see the rise of immutability, 1 way data flow (witness Flux on the front end) and functional composition and extension ([event architectures](http://daviddawson.me/blog/2017/07/10/styles-of-event-architecture.html))
+I very much see Entity services as a bad thing. Objects in the large just play into the fact that OO approaches have, given their originally stated aims, failed. OO abstractions that encapsulate state, identity and operation have led to poor designs in all levels of software. Instead we see the rise of immutability, 1 way data flow (witness Flux on the front end) and functional composition and extension ([event architectures](/2017/07/styles-of-event-architecture/))
 
 So the simplistic “entity service” is a poor choice of design. This is not the only design that you can use, and as rightly pointed out in many of the comments around the above article, you can apply DDD to come up with something better.
 

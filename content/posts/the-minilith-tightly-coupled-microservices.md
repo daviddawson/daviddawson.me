@@ -6,7 +6,7 @@ categories: ["Design", "Philosophy"]
 tags: ["architecture", "best-practices", "ddd", "dry", "events", "microservices", "technology"]
 description: "Exploring the concept of tightly coupled microservices that deploy as a logical unit"
 slug: "the-minilith-tightly-coupled-microservices"
-aliases:
+aliases: ['/philosophy/the-minilith-tightly-coupled-microservices/', '/the-minilith-tightly-coupled-microservices/']
   - "/philosophy/the-minilith-tightly-coupled-microservices/"
   - "/blog/2016/03/11/the-minilith-tightly-coupled-microservices.html"
 ---

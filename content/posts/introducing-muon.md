@@ -6,7 +6,7 @@ categories: ["Coding"]
 tags: ["architecture", "ddd", "events", "muon", "technology"]
 description: "This article introduces a project I’ve been working on for the past few years in one form or another. Muon"
 slug: "introducing-muon"
-aliases:
+aliases: ['/coding/introducing-muon/', '/introducing-muon/']
   - "/coding/introducing-muon/"
 ---
 
@@ -14,7 +14,7 @@ This article introduces a project I’ve been working on for the past few years 
 
 For the past bunch of years, I’ve been working with distributed systems, often with a messaging component. This is a fun and rewarding part of software development, up there with UI development. It’s fairly involved, and often hard, but covers lots of different areas, both deeply theoretical and very practical. Once you solve an issue involving a race condition that requires networks, heavy load and specific hardware to trigger, you become far more interested in the world of concurrency, networking and spreading beyond the regular languages you are used to!
 
-Over the past 5 years or so, these systems I have been involved with have been recognisably what are now called Microservice systems. The only difference I see between them is the underlying [motivations and philosophy](http://daviddawson.me/microservices/2016/07/20/microservices-philosophy.html)
+Over the past 5 years or so, these systems I have been involved with have been recognisably what are now called Microservice systems. The only difference I see between them is the underlying [motivations and philosophy](/2016/07/microservices-philosophy/)
 
 As I’ve built these systems, large, small, high performance, low performance and so on. I’ve noticed a set of things that keep on coming up. Not quite common problems, but common complaints perhaps. My current bug bears in the Microservices world are the **abuse of http** for local communication and the discarding of **polyglot**
 
@@ -94,7 +94,7 @@ All the while, with the hard Protocol/ BiChannel split, these are easily testabl
 
 ### Protocol Example: Reactive Streams
 
-To take an example of something commonly required when using networked data, streaming. Currently the JVM world has standardised on the [Reactive Streams](http://daviddawson.me/blog/2017/02/21/www.reactive-streams.org) specification as the gold standard for streaming interoperability within the JVM. This has been adopted into Java 9, and so can be relied on to have broad support.
+To take an example of something commonly required when using networked data, streaming. Currently the JVM world has standardised on the [Reactive Streams](http://www.reactive-streams.org) specification as the gold standard for streaming interoperability within the JVM. This has been adopted into Java 9, and so can be relied on to have broad support.
 
 Wouldn’t it be useful to have access to this standard **_outside_** of the JVM?
 
@@ -194,7 +194,7 @@ Muon focuses hard on the nature of distributed communication, this leads to some
 
 The best place to get started is to visit the [Getting Involved](http://muoncore.io/guide/getting-involved.html) page.
 
-If you are interested in Muon and would like to help the project then it is open to being sponsored by friendly organisations supplying time. The more time the core contributors dedicate to the project the faster it will move. [Get in touch](http://daviddawson.me/me.html) for more info on sponsoring.
+If you are interested in Muon and would like to help the project then it is open to being sponsored by friendly organisations supplying time. The more time the core contributors dedicate to the project the faster it will move. [Get in touch](/me/) for more info on sponsoring.
 
 I hope to see you there!
 

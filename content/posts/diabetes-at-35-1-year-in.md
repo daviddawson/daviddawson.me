@@ -6,7 +6,7 @@ categories: []
 tags: []
 description: "_This was written in early August of 2017 as a form of personal catharsis. I don’t know if I will publish it, if you’re reading then I obviously have done_. (06..."
 slug: "diabetes-at-35-1-year-in"
-aliases:
+aliases: ['/diabetes-at-35-1-year-in/']
   - "/uncategorised/diabetes-at-35-1-year-in/"
 ---
 
@@ -18,7 +18,7 @@ To channel our good queen for a moment, 2016 is not a year I will remember with 
 
 Coming to the end of 2015, from the outside Simplicity Itself was doing well for itself. We had a few long term contracts, more being arranged. We were hiring and expanding our areas of expertise. It seemed good.
 
-[The weeks before Christmas was where things got interesting](http://daviddawson.me/blog/2017/02/04/simplicity-itself-shutdown.html). In the space of a few days 2 projects shut down unexpectedly, with no notice and no ability to renegotiate. Our people were just off site and no longer earning. I had to ring around and make some people very unhappy just before Christmas.
+[The weeks before Christmas was where things got interesting](/2017/02/simplicity-itself-shutdown/). In the space of a few days 2 projects shut down unexpectedly, with no notice and no ability to renegotiate. Our people were just off site and no longer earning. I had to ring around and make some people very unhappy just before Christmas.
 
 At the same time (ie a couple of weeks before Christmas), my company co-founder informed me that he was leaving. Crazy ensued as I attempted to stabilise what was left of the company and see if we could survive in the new year. It never recovered, although I kept things going in a cut down form for another 9 months to attempt to give some sort of stability to our clients and staff where I could.
 

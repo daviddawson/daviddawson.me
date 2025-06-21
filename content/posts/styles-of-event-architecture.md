@@ -6,7 +6,7 @@ categories: ["Philosophy"]
 tags: ["architecture", "blog", "ddd", "events", "evergreen", "muon", "tech", "technology"]
 description: "This article was spawned from a conversation I had with Ben Wilcock on his article about building an event sourced system on Cloud Foundry using Axon, which you..."
 slug: "styles-of-event-architecture"
-aliases:
+aliases: ['/philosophy/styles-of-event-architecture/', '/styles-of-event-architecture/']
   - "/philosophy/styles-of-event-architecture/"
 ---
 
@@ -18,7 +18,7 @@ This is an interesting topic, with a lot of potential pitfalls.
 
 Firstly, some definition. An Event Architecture is :-
 
-  * A software architecture. As such, its akin to what I would call a [software philosophy](http://daviddawson.me/microservices/2016/07/20/microservices-philosophy.html). A mental model through which you create a coherent design expressing the principles and properties you want.
+  * A software architecture. As such, its akin to what I would call a [software philosophy](/2016/07/microservices-philosophy/). A mental model through which you create a coherent design expressing the principles and properties you want.
   * About **events**. Events are part of your data model, and so an Event Architecture is a **Data Architecture**.
 
 An event architecture is not :-
@@ -135,7 +135,7 @@ Depending on your implementing technologies/ APIs, you may have to duplicate eve
 
 This is a portion of the model often missed, especially when first approaching an event architecture that involves event sourcing.
 
-[My solution is, as above, just use the term “event sourcing” to refer to loading a single aggregate root. For the replay of deep, combined streams, use some other term.](https://daviddawson.me/coding/replay-your-event-streams-for-fun-and-profit/)
+[My solution is, as above, just use the term “event sourcing” to refer to loading a single aggregate root. For the replay of deep, combined streams, use some other term.](/coding/replay-your-event-streams-for-fun-and-profit/)
 
 # Picking technologies to implement this
 
@@ -161,6 +161,6 @@ An event architecture is a different view of the world than perhaps you’re use
 
 The downside is that different world view. You must think in terms of data, and flows of data, not inter service interactions. The more you can frame your questions as “what data do I need and how can it get here” rather than “what API do I call” the greater success you will have with using event architectures.
 
-If you’d like more in depth info on how to build this kind of system, I can happily help you build one, or at least advise you on the best way to go – [contact me](http://daviddawson.me/me.html)
+If you’d like more in depth info on how to build this kind of system, I can happily help you build one, or at least advise you on the best way to go – [contact me](/me/)
 
 [architecture](https://daviddawson.me/tag/architecture/)[blog](https://daviddawson.me/tag/blog/)[ddd](https://daviddawson.me/tag/ddd/)[events](https://daviddawson.me/tag/events/)[evergreen](https://daviddawson.me/tag/evergreen/)[muon](https://daviddawson.me/tag/muon/)[tech](https://daviddawson.me/tag/tech/)[technology](https://daviddawson.me/tag/technology/)

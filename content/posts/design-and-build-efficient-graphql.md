@@ -4,7 +4,7 @@ date: 2022-12-22T00:00:00Z
 draft: false
 categories: ["Backend", "Coding"]
 tags: ["api", "best-practices", "blog", "graphql", "technology"]
-aliases: ["/design-and-build-efficient-graphql"]
+aliases: ['/coding/design-and-build-efficient-graphql/', '/design-and-build-efficient-graphql/', '/design-and-build-efficient-graphql']
 author: "David Dawson"
 description: "I've been working with the team at Aurena in Austria since the beginning of 2021. It's been a lot of fun, and interesting work."
 ---

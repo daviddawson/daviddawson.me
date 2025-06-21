@@ -4,15 +4,15 @@ date: 2013-09-01T21:26:10+01:00
 draft: false
 categories: ["Coding"]
 tags: ["blog", "grails", "groovy", "technology"]
-description: "This is a follow on to [Simplicity in Web Architecture – Beware the Stateless Service](http://daviddawson.me/blog/2013/03/28/stateless-services-are-evil.html)"
+description: "This is a follow on to [Simplicity in Web Architecture – Beware the Stateless Service](/2013/03/stateless-services-are-evil/)"
 slug: "simplicity-in-grails-design-all-hail-the-command-object"
-aliases:
+aliases: ['/coding/simplicity-in-grails-design-all-hail-the-command-object/', '/simplicity-in-grails-design-all-hail-the-command-object/']
   - "/coding/simplicity-in-grails-design-all-hail-the-command-object/"
 ---
 
 # All Hail the Command Object
 
-This is a follow on to [Simplicity in Web Architecture – Beware the Stateless Service](http://daviddawson.me/blog/2013/03/28/stateless-services-are-evil.html)
+This is a follow on to [Simplicity in Web Architecture – Beware the Stateless Service](/2013/03/stateless-services-are-evil/)
 
 In that article, I gave my opinion on the Stateless Service programming model, and why I think it has been overused and touched on some of the issues it has caused.
 

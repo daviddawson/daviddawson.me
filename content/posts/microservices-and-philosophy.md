@@ -6,7 +6,7 @@ categories: ["Philosophy"]
 tags: ["antifragile", "architecture", "ddd", "devops", "events", "evergreen", "microservices", "technology"]
 description: "This article was originally posted at simplicityitself.com."
 slug: "microservices-and-philosophy"
-aliases:
+aliases: ['/philosophy/microservices-and-philosophy/', '/microservices-and-philosophy/']
   - "/philosophy/microservices-and-philosophy/"
 ---
 
@@ -14,7 +14,7 @@ This article was originally posted at simplicityitself.com.
 
 Simplicity Itself has now closed, and so I have moved my articles here.
 
-If you would like to read up on why it closed – See [here](http://daviddawson.me/blog/2017/02/04/simplicity-itself-shutdown.html)
+If you would like to read up on why it closed – See [here](/2017/02/simplicity-itself-shutdown/)
 
 When talking to clients, both current and potential, at conferences, users groups and the like, the question arises often, “what is a Microservice?”
 

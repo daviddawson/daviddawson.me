@@ -6,7 +6,7 @@ categories: ["Coding"]
 tags: ["architecture", "blog", "data flow", "datas schema", "ddd", "design", "events", "microservices", "technology"]
 description: "Understanding how data flows and pipelines are more important than services themselves"
 slug: "the-role-of-data-in-microservices"
-aliases:
+aliases: ['/coding/the-role-of-data-in-microservices/', '/the-role-of-data-in-microservices/']
   - "/coding/the-role-of-data-in-microservices/"
 ---
 

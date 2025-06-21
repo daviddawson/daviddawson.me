@@ -6,7 +6,7 @@ categories: ["Philosophy"]
 tags: ["best-practices", "dry", "grails", "technology"]
 description: "Copy and Paste, it’s bad. We have this drilled into us as received knowledge. We must build abstractions to avoid copying code, or concepts that seem similar, a..."
 slug: "development-by-slogan-with-dry-part-2-the-tower-of-coupling"
-aliases:
+aliases: ['/philosophy/development-by-slogan-with-dry-part-2-the-tower-of-coupling/', '/development-by-slogan-with-dry-part-2-the-tower-of-coupling/']
   - "/philosophy/development-by-slogan-with-dry-part-2-the-tower-of-coupling/"
 ---
 

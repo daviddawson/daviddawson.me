@@ -6,7 +6,7 @@ categories: ["Coding"]
 tags: ["best-practices", "blog", "grails", "groovy", "tech"]
 description: "Thoughts on the future direction of the Grails web framework"
 slug: "the-future-of-grails"
-aliases:
+aliases: ['/coding/the-future-of-grails/', '/the-future-of-grails/']
   - "/blog/2013/04/18/the-future-of-grails/"
   - "/blog/2013/04/18/future-of-grails.html"
 ---

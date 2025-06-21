@@ -6,7 +6,7 @@ categories: ["Coding"]
 tags: ["blog", "ddd", "events", "muon", "tech"]
 description: "**TL/DR**"
 slug: "building-reactive-microservices-using-muon-and-scaling-them-using-kafka-cassandra-and-friends"
-aliases:
+aliases: ['/coding/building-reactive-microservices-using-muon-and-scaling-them-using-kafka-cassandra-and-friends/', '/building-reactive-microservices-using-muon-and-scaling-them-using-kafka-cassandra-and-friends/']
   - "/coding/building-reactive-microservices-using-muon-and-scaling-them-using-kafka-cassandra-and-friends/"
 ---
 
@@ -66,7 +66,7 @@ The real win though is what relying on these APIs will do to you system and its 
 
 ## A message API: Persisted Event Streams
 
-You can, as many have told me, build an event based system using arbitrary message brokers. This is certainly true. You will likely though be either building a SEDA system (and so have compromised visibility of failure) or be using ephemeral events (and so have a system that has the consistency property of “hopeful”) or most likely, a combination of these approaches. I wrote the event stack to give form to what I consider to tbe the best event architecture, **persisted streams of events**. To learn more about the topic, I jotted down a set of thoughts on event systems → [read here](http://daviddawson.me/blog/2017/07/10/styles-of-event-architecture.html)
+You can, as many have told me, build an event based system using arbitrary message brokers. This is certainly true. You will likely though be either building a SEDA system (and so have compromised visibility of failure) or be using ephemeral events (and so have a system that has the consistency property of “hopeful”) or most likely, a combination of these approaches. I wrote the event stack to give form to what I consider to tbe the best event architecture, **persisted streams of events**. To learn more about the topic, I jotted down a set of thoughts on event systems → [read here](/2017/07/styles-of-event-architecture/)
 
 Persisted event streams have a lot of benefits, which I won’t dwell on here. The Event Stack in Muon defines an API that allows your application to move up a level from simple message brokers and cold event stores and gain access to the following operations
 

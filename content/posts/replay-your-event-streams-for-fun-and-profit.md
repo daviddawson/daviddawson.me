@@ -4,7 +4,7 @@ date: 2021-09-12T00:00:00Z
 categories: ["Coding"]
 tags: ["architecture", "best-practices", "cqrs", "events", "evergreen", "microservices"]
 description: "An in-depth exploration of Event Sourcing, Stream Processing, and CQRS, discussing how to effectively design and implement event-driven architectures."
-aliases:
+aliases: ['/coding/replay-your-event-streams-for-fun-and-profit/', '/replay-your-event-streams-for-fun-and-profit/']
   - /coding/replay-your-event-streams-for-fun-and-profit/
 ---
 

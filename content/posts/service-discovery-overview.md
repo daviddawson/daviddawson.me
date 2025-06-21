@@ -4,7 +4,7 @@ date: 2015-09-01T00:00:00Z
 draft: false
 categories: ["Design", "Guide"]
 tags: ["best-practices", "microservices", "technology"]
-aliases: ["/design/service-discovery-overview"]
+aliases: ['/guide/service-discovery-overview/', '/service-discovery-overview/', '/design/service-discovery-overview']
 author: "David Dawson"
 description: "When building microservices, you have to naturally distribute your application around a network. It is almost always the case that you are building in a cloud environment, and often using immutable infrastructure."
 ---

@@ -4,7 +4,7 @@ date: 2015-09-01T00:00:00Z
 draft: false
 categories: ["Design", "Guide"]
 tags: ["architecture", "best-practices", "microservices", "technology"]
-aliases: ["/design/microservices-security-oauth-vs-session"]
+aliases: ['/guide/microservices-security-oauth-vs-session/', '/microservices-security-oauth-vs-session/', '/design/microservices-security-oauth-vs-session']
 author: "David Dawson"
 description: "A question often posed to us during our research and project work is 'how should I secure a Microservice?'"
 ---

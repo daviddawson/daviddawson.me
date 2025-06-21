@@ -6,7 +6,7 @@ categories: ["Philosophy"]
 tags: ["best-practices", "dry", "grails", "technology"]
 description: "I recently had a thought provoking exchange on Twitter with Luke Daley who is a Gradle developer, creator of the Ratpack web framework and all around awesome fe..."
 slug: "development-by-slogan-with-dry-part-1-really-dry"
-aliases:
+aliases: ['/philosophy/development-by-slogan-with-dry-part-1-really-dry/', '/development-by-slogan-with-dry-part-1-really-dry/']
   - "/philosophy/development-by-slogan-with-dry-part-1-really-dry/"
 ---
 
@@ -46,6 +46,6 @@ The “Entity” was born, refined, and then became the core of how we build rat
 
 Unfortunately, this comes with it’s own problems. Before I discuss those though, I want to tackle Don’t Repeat Anything a little more, as it’s the application of this too deeply that we see again and again, and defended to the point of dogma.
 
-**Next post …​** I’ll dig into the effects this can have on your development in [Development by Slogan with DRY](http://daviddawson.me/blog/2015/01/08/development-by-slogan-dry-part2.html)
+**Next post …​** I’ll dig into the effects this can have on your development in [Development by Slogan with DRY](/2015/01/development-by-slogan-dry-part2/)
 
 [best-practices](https://daviddawson.me/tag/best-practices/)[dry](https://daviddawson.me/tag/dry/)[grails](https://daviddawson.me/tag/grails/)[technology](https://daviddawson.me/tag/technology/)

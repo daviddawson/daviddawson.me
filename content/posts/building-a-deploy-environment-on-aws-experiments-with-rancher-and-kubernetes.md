@@ -4,13 +4,13 @@ date: 2017-09-01T20:46:15+01:00
 draft: false
 categories: ["Coding"]
 tags: []
-description: "Since [coming back to freelancing](http://daviddawson.me/blog/2017/02/04/simplicity-itself-shutdown.html), I’ve (re)started a set of projects with clients, mana..."
+description: "Since [coming back to freelancing](/2017/02/simplicity-itself-shutdown/), I’ve (re)started a set of projects with clients, mana..."
 slug: "building-a-deploy-environment-on-aws-experiments-with-rancher-and-kubernetes"
-aliases:
+aliases: ['/coding/building-a-deploy-environment-on-aws-experiments-with-rancher-and-kubernetes/', '/building-a-deploy-environment-on-aws-experiments-with-rancher-and-kubernetes/']
   - "/coding/building-a-deploy-environment-on-aws-experiments-with-rancher-and-kubernetes/"
 ---
 
-Since [coming back to freelancing](http://daviddawson.me/blog/2017/02/04/simplicity-itself-shutdown.html), I’ve (re)started a set of projects with clients, managing them end to end. This means that I need a deployment environment somewhere that I can throw stuff into. I have much experience with Cloud Foundry (I deliver training for Pivotal on it), but its a little heavy for my needs, and I want to have relatively small stateful containers that don’t take up a full box.
+Since [coming back to freelancing](/2017/02/simplicity-itself-shutdown/), I’ve (re)started a set of projects with clients, managing them end to end. This means that I need a deployment environment somewhere that I can throw stuff into. I have much experience with Cloud Foundry (I deliver training for Pivotal on it), but its a little heavy for my needs, and I want to have relatively small stateful containers that don’t take up a full box.
 
 I have been using Docker Machine for a while to host small projects on AWS. I like the workflow that it gives, letting you deploy images from a registry, or have a docker compose file build in place and deploy directly for testing purposes.
 
@@ -118,7 +118,7 @@ I want multi cloud.
 
 ### _This sounds awesome, can I pay you to do some work for me?_
 
-Why, [yes you can](http://daviddawson.me/hireme.html). (ok, fair enough, this is an advert)
+Why, [yes you can](/hireme/). (ok, fair enough, this is an advert)
 
 ### _What kind of projects are you deploying?_
 
