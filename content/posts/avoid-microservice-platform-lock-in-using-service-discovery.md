@@ -7,7 +7,6 @@ tags: ["architecture", "microservices", "tech"]
 description: "The promises of adopting the cloud for your software are enticing. Effectively limitless scalability, large reductions in capital expenditure, efficiency savings in staffing through automation."
 slug: "avoid-microservice-platform-lock-in-using-service-discovery"
 aliases: ['/philosophy/avoid-microservice-platform-lock-in-using-service-discovery/', '/avoid-microservice-platform-lock-in-using-service-discovery/']
-  - "/philosophy/avoid-microservice-platform-lock-in-using-service-discovery/"
 ---
 
 The promises of adopting the cloud for your software are enticing. Effectively limitless scalability, large reductions in capital expenditure, efficiency savings in staffing through automation. An exciting prospective, and one that has being brought into even greater focus by the rise and rise of Microservices.
