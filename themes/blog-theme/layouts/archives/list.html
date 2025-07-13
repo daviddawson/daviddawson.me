@@ -1,0 +1,162 @@
+{{ define "main" }}
+<style>
+    .archive-page-header {
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+    
+    .archive-page-title {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 1rem;
+    }
+    
+    .archive-year-section {
+        margin-bottom: 4rem;
+        padding: 2rem;
+        background: var(--bg-secondary);
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+    }
+    
+    .archive-year-section:target {
+        box-shadow: 0 0 0 3px var(--accent);
+    }
+    
+    .archive-year-title {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--accent);
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .post-count {
+        font-size: 1rem;
+        color: var(--text-muted);
+        font-weight: normal;
+    }
+    
+    .archive-posts {
+        display: grid;
+        gap: 1rem;
+    }
+    
+    .archive-post-item {
+        display: grid;
+        grid-template-columns: 100px 1fr auto;
+        gap: 1rem;
+        align-items: baseline;
+        padding: 1rem;
+        background: var(--bg-primary);
+        border-radius: var(--radius);
+        border: 1px solid var(--border-light);
+        transition: all 0.2s ease;
+    }
+    
+    .archive-post-item:hover {
+        border-color: var(--accent);
+        transform: translateX(5px);
+    }
+    
+    .archive-post-date {
+        color: var(--text-muted);
+        font-family: 'Roboto Mono', monospace;
+        font-size: 0.9rem;
+    }
+    
+    .archive-post-title a {
+        color: var(--text-primary);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1.1rem;
+    }
+    
+    .archive-post-title a:hover {
+        color: var(--accent);
+    }
+    
+    .archive-post-meta {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+    
+    .archive-category {
+        background: var(--accent-light);
+        color: var(--accent);
+        padding: 0.2rem 0.5rem;
+        border-radius: 3px;
+        font-size: 0.8rem;
+        text-decoration: none;
+        border: 1px solid var(--accent);
+    }
+    
+    .archive-category:hover {
+        background: var(--accent);
+        color: white;
+    }
+    
+    @media (max-width: 768px) {
+        .archive-post-item {
+            grid-template-columns: 1fr;
+            gap: 0.5rem;
+        }
+        
+        .archive-post-meta {
+            margin-top: 0.5rem;
+        }
+    }
+</style>
+
+<div class="archive-page-header">
+    <h1 class="archive-page-title">Article Archives</h1>
+    <p class="archive-subtitle">{{ len (where .Site.RegularPages "Type" "posts") }} articles published since {{ (index (last 1 (where .Site.RegularPages "Type" "posts").ByDate) 0).Date.Format "2006" }}</p>
+</div>
+
+{{ $posts := where .Site.RegularPages "Type" "posts" }}
+{{ range ($posts.GroupByDate "2006").Reverse }}
+<div class="archive-year-section" id="{{ .Key }}">
+    <h2 class="archive-year-title">
+        {{ .Key }}
+        <span class="post-count">{{ len .Pages }} posts</span>
+    </h2>
+    <div class="archive-posts">
+        {{ range .Pages.ByDate.Reverse }}
+        <article class="archive-post-item">
+            <time class="archive-post-date">{{ .Date.Format "Jan 02" }}</time>
+            <h3 class="archive-post-title">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </h3>
+            {{ if .Params.categories }}
+            <div class="archive-post-meta">
+                {{ range .Params.categories }}
+                <a href="{{ "categories/" | relURL }}{{ . | urlize }}" class="archive-category">{{ . }}</a>
+                {{ end }}
+            </div>
+            {{ end }}
+        </article>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
+
+<script>
+// Smooth scroll to year section when coming from sidebar
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.location.hash) {
+        const element = document.querySelector(window.location.hash);
+        if (element) {
+            setTimeout(() => {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        }
+    }
+});
+</script>
+{{ end }}

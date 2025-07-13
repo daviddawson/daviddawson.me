@@ -1,0 +1,114 @@
+{{ define "main" }}
+<style>
+    .archive-header {
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--border);
+    }
+    
+    .archive-title {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 0.5rem;
+    }
+    
+    .archive-subtitle {
+        color: var(--text-muted);
+        font-size: 1.1rem;
+    }
+    
+    .posts-by-month {
+        margin-bottom: 3rem;
+    }
+    
+    .month-header {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: var(--text-primary);
+        margin: 2rem 0 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--border-light);
+    }
+    
+    .archive-post {
+        display: flex;
+        align-items: baseline;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        padding: 0.5rem 0;
+    }
+    
+    .archive-post-date {
+        color: var(--text-muted);
+        font-family: 'Roboto Mono', monospace;
+        font-size: 0.9rem;
+        min-width: 80px;
+    }
+    
+    .archive-post-title {
+        flex: 1;
+    }
+    
+    .archive-post-title a {
+        color: var(--text-primary);
+        text-decoration: none;
+        font-weight: 500;
+    }
+    
+    .archive-post-title a:hover {
+        color: var(--accent);
+    }
+    
+    .archive-post-categories {
+        display: flex;
+        gap: 0.5rem;
+        margin-left: auto;
+    }
+    
+    .archive-post-category {
+        background: var(--bg-secondary);
+        color: var(--text-secondary);
+        padding: 0.2rem 0.5rem;
+        border-radius: 3px;
+        font-size: 0.75rem;
+        text-decoration: none;
+        border: 1px solid var(--border);
+    }
+    
+    .archive-post-category:hover {
+        background: var(--accent);
+        color: white;
+    }
+</style>
+
+<div class="archive-header">
+    <h1 class="archive-title">{{ .Title }}</h1>
+    <p class="archive-subtitle">{{ len .Pages }} posts published in {{ .Title }}</p>
+</div>
+
+<div class="posts-by-month">
+    {{ $year := .Title }}
+    {{ $yearPosts := where .Pages "Type" "posts" }}
+    {{ range ($yearPosts.GroupByDate "January 2006") }}
+    <h2 class="month-header">{{ .Key }}</h2>
+    {{ range .Pages.ByDate.Reverse }}
+    <article class="archive-post">
+        <time class="archive-post-date">{{ .Date.Format "Jan 02" }}</time>
+        <h3 class="archive-post-title">
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </h3>
+        {{ if .Params.categories }}
+        <div class="archive-post-categories">
+            {{ range .Params.categories }}
+            <a href="{{ "categories/" | relURL }}{{ . | urlize }}" class="archive-post-category">{{ . }}</a>
+            {{ end }}
+        </div>
+        {{ end }}
+    </article>
+    {{ end }}
+    {{ end }}
+</div>
+{{ end }}

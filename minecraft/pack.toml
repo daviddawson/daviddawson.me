@@ -1,0 +1,13 @@
+name = "DawsonCraft"
+author = "Me"
+version = "1.0.0"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "2e31e2130ce0add2e77d3da79e4b939ba25a601af60f5ee1c5ea3da78a170e82"
+
+[versions]
+forge = "47.4.3"
+minecraft = "1.20.1"
