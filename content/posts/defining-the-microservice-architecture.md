@@ -6,8 +6,9 @@ categories: ["Philosophy"]
 tags: ["architecture", "best-practices", "blog", "ddd", "microservices"]
 description: "Recently (June 2015), I gave a talk at the DDD Exchange at Skills Matter in London."
 slug: "defining-the-microservice-architecture"
-aliases: ['/philosophy/defining-the-microservice-architecture/', '/defining-the-microservice-architecture/']
+aliases:
   - "/philosophy/defining-the-microservice-architecture/"
+  - "/defining-the-microservice-architecture/"
 ---
 
 Recently (June 2015), I gave a talk at the DDD Exchange at Skills Matter in London.

@@ -6,8 +6,9 @@ categories: ["Philosophy"]
 tags: ["architecture", "blog", "ddd", "events", "evergreen", "muon", "tech", "technology"]
 description: "This article was spawned from a conversation I had with Ben Wilcock on his article about building an event sourced system on Cloud Foundry using Axon, which you..."
 slug: "styles-of-event-architecture"
-aliases: ['/philosophy/styles-of-event-architecture/', '/styles-of-event-architecture/']
+aliases:
   - "/philosophy/styles-of-event-architecture/"
+  - "/styles-of-event-architecture/"
 ---
 
 This article was spawned from a conversation I had with Ben Wilcock on his article about building an event sourced system on Cloud Foundry using Axon, which you can read [here](https://benwilcock.wordpress.com/2017/07/11/cqrs-and-event-sourcing-microservices-on-cloudfoundry/amp/). We covered some interesting topics, including some critiques of the model so he encouraged me to write up my thoughts on Event Architectures. 

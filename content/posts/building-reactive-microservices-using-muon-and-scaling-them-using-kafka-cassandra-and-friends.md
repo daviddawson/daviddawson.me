@@ -6,8 +6,9 @@ categories: ["Coding"]
 tags: ["blog", "ddd", "events", "muon", "tech"]
 description: "**TL/DR**"
 slug: "building-reactive-microservices-using-muon-and-scaling-them-using-kafka-cassandra-and-friends"
-aliases: ['/coding/building-reactive-microservices-using-muon-and-scaling-them-using-kafka-cassandra-and-friends/', '/building-reactive-microservices-using-muon-and-scaling-them-using-kafka-cassandra-and-friends/']
+aliases:
   - "/coding/building-reactive-microservices-using-muon-and-scaling-them-using-kafka-cassandra-and-friends/"
+  - "/building-reactive-microservices-using-muon-and-scaling-them-using-kafka-cassandra-and-friends/"
 ---
 
 **TL/DR**

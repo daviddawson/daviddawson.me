@@ -6,7 +6,8 @@ categories: []
 tags: []
 description: "_This was written in early August of 2017 as a form of personal catharsis. I don’t know if I will publish it, if you’re reading then I obviously have done_. (06..."
 slug: "diabetes-at-35-1-year-in"
-aliases: ['/diabetes-at-35-1-year-in/']
+aliases:
+  - "/diabetes-at-35-1-year-in/"
   - "/uncategorised/diabetes-at-35-1-year-in/"
 ---
 

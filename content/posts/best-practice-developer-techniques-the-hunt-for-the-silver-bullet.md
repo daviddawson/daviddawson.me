@@ -7,7 +7,6 @@ tags: ["best-practices", "software-development", "methodology", "tech"]
 description: "The software development industry has an enduring fascination with finding the 'silver bullet' - that one methodology, practice, or tool that will solve all our problems."
 slug: "best-practice-developer-techniques-the-hunt-for-the-silver-bullet"
 aliases: ['/philosophy/best-practice-developer-techniques-the-hunt-for-the-silver-bullet/', '/best-practice-developer-techniques-the-hunt-for-the-silver-bullet/']
-  - "/philosophy/best-practice-developer-techniques-the-hunt-for-the-silver-bullet/"
 ---
 
 The software development industry has an enduring fascination with finding the "silver bullet" - that one methodology, practice, or tool that will solve all our problems. From the early days of computing to today's DevOps and microservices movements, we've seen wave after wave of "best practices" that promise to revolutionize how we build software.

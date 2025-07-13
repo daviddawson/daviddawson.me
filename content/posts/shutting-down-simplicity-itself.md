@@ -6,8 +6,9 @@ categories: ["Uncategorised"]
 tags: ["commercial", "oldtimes", "russmiles"]
 description: "Almost 5 years ago, Russ Miles and I embarked on a wild journey with a bright new company, Simplicity Itself."
 slug: "shutting-down-simplicity-itself"
-aliases: ['/uncategorised/shutting-down-simplicity-itself/', '/shutting-down-simplicity-itself/']
+aliases:
   - "/uncategorised/shutting-down-simplicity-itself/"
+  - "/shutting-down-simplicity-itself/"
 ---
 
 Almost 5 years ago, Russ Miles and I embarked on a wild journey with a bright new company, Simplicity Itself.

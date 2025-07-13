@@ -6,8 +6,9 @@ categories: ["Coding"]
 tags: ["devops", "make", "tech"]
 description: "This article was originally posted at simplicityitself.com."
 slug: "a-microservices-developer-api-using-make"
-aliases: ['/coding/a-microservices-developer-api-using-make/', '/a-microservices-developer-api-using-make/']
+aliases:
   - "/coding/a-microservices-developer-api-using-make/"
+  - "/a-microservices-developer-api-using-make/"
 ---
 
 This article was originally posted at simplicityitself.com.

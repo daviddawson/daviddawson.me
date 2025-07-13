@@ -6,8 +6,9 @@ categories: ["Coding"]
 tags: ["blog", "gorm", "groovy"]
 description: "Gorm is the data access layer in Grails. I’ve been mostly away from Grails since 3.0 landed (for reasons)."
 slug: "groovy-gorm-shell-script"
-aliases: ['/coding/groovy-gorm-shell-script/', '/groovy-gorm-shell-script/']
+aliases:
   - "/coding/groovy-gorm-shell-script/"
+  - "/groovy-gorm-shell-script/"
 ---
 
 Gorm is the data access layer in Grails. I’ve been mostly away from Grails since 3.0 landed (for reasons).

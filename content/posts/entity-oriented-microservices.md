@@ -6,8 +6,9 @@ categories: ["Guide"]
 tags: ["blog", "ddd", "events", "evergreen", "technology"]
 description: "![Image](/images/knowledge.jpg)"
 slug: "entity-oriented-microservices"
-aliases: ['/guide/entity-oriented-microservices/', '/entity-oriented-microservices/']
+aliases:
   - "/guide/entity-oriented-microservices/"
+  - "/entity-oriented-microservices/"
 ---
 
 ![Image](/images/knowledge.jpg)

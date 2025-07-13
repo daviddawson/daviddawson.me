@@ -6,8 +6,9 @@ categories: ["Coding"]
 tags: ["architecture", "blog", "data flow", "datas schema", "ddd", "design", "events", "microservices", "technology"]
 description: "Understanding how data flows and pipelines are more important than services themselves"
 slug: "the-role-of-data-in-microservices"
-aliases: ['/coding/the-role-of-data-in-microservices/', '/the-role-of-data-in-microservices/']
+aliases:
   - "/coding/the-role-of-data-in-microservices/"
+  - "/the-role-of-data-in-microservices/"
 ---
 
 When approaching development of Microservices, it's often easy to think of the services themselves as the valuable pieces of your system. Each service you add gives you more functionality, and so more value. For the majority of systems we have built and reviewed during our consultancy, we have found that the system itself is of fairly marginal value. Instead, the data that it contains and the intelligence it can provide based upon that data is what is actually valuable. This seems a subtle, even academic distinction, but it is important and putting it at the forefront of your mind during design has significant repercussions on the way you build your services and the way that they interact with each other.

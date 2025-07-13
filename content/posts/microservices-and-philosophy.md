@@ -6,8 +6,9 @@ categories: ["Philosophy"]
 tags: ["antifragile", "architecture", "ddd", "devops", "events", "evergreen", "microservices", "technology"]
 description: "This article was originally posted at simplicityitself.com."
 slug: "microservices-and-philosophy"
-aliases: ['/philosophy/microservices-and-philosophy/', '/microservices-and-philosophy/']
+aliases:
   - "/philosophy/microservices-and-philosophy/"
+  - "/microservices-and-philosophy/"
 ---
 
 This article was originally posted at simplicityitself.com.

@@ -6,8 +6,9 @@ categories: ["Philosophy"]
 tags: ["best-practices", "dry", "grails", "technology"]
 description: "Hopefully, you now understand some of my pain when I’m arguing against DRY, and arguing against deep abstractions. The original definition of DRY though, Single..."
 slug: "development-by-slogan-with-dry-part-3-dry-vs-wet"
-aliases: ['/philosophy/development-by-slogan-with-dry-part-3-dry-vs-wet/', '/development-by-slogan-with-dry-part-3-dry-vs-wet/']
+aliases:
   - "/philosophy/development-by-slogan-with-dry-part-3-dry-vs-wet/"
+  - "/development-by-slogan-with-dry-part-3-dry-vs-wet/"
 ---
 
 ## The Original DRY, WET and Slogan Based Development

@@ -6,8 +6,9 @@ categories: ["Philosophy"]
 tags: ["best-practices", "dry", "grails", "technology"]
 description: "I recently had a thought provoking exchange on Twitter with Luke Daley who is a Gradle developer, creator of the Ratpack web framework and all around awesome fe..."
 slug: "development-by-slogan-with-dry-part-1-really-dry"
-aliases: ['/philosophy/development-by-slogan-with-dry-part-1-really-dry/', '/development-by-slogan-with-dry-part-1-really-dry/']
+aliases:
   - "/philosophy/development-by-slogan-with-dry-part-1-really-dry/"
+  - "/development-by-slogan-with-dry-part-1-really-dry/"
 ---
 
 I recently had a thought provoking exchange on Twitter with Luke Daley who is a Gradle developer, creator of the Ratpack web framework and all around awesome fellow.

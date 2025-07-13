@@ -6,8 +6,9 @@ categories: ["Coding"]
 tags: ["architecture", "ddd", "events", "muon", "technology"]
 description: "This article introduces a project I’ve been working on for the past few years in one form or another. Muon"
 slug: "introducing-muon"
-aliases: ['/coding/introducing-muon/', '/introducing-muon/']
+aliases:
   - "/coding/introducing-muon/"
+  - "/introducing-muon/"
 ---
 
 This article introduces a project I’ve been working on for the past few years in one form or another. Muon

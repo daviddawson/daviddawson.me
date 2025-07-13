@@ -6,8 +6,9 @@ categories: ["Coding"]
 tags: ["blog", "grails", "groovy", "technology"]
 description: "This is a follow on to [Simplicity in Web Architecture – Beware the Stateless Service](/2013/03/stateless-services-are-evil/)"
 slug: "simplicity-in-grails-design-all-hail-the-command-object"
-aliases: ['/coding/simplicity-in-grails-design-all-hail-the-command-object/', '/simplicity-in-grails-design-all-hail-the-command-object/']
+aliases:
   - "/coding/simplicity-in-grails-design-all-hail-the-command-object/"
+  - "/simplicity-in-grails-design-all-hail-the-command-object/"
 ---
 
 # All Hail the Command Object

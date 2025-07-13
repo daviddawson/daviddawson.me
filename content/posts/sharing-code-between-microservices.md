@@ -6,8 +6,9 @@ categories: ["Coding"]
 tags: ["architecture", "blog", "ddd", "dry", "microservices", "technology"]
 description: "My good friend Peter Ledbrook has been pondering the question [how can we share code between microservices](http://blog.cacoethes.co.uk/software/code-reuse-in-m..."
 slug: "sharing-code-between-microservices"
-aliases: ['/coding/sharing-code-between-microservices/', '/sharing-code-between-microservices/']
+aliases:
   - "/coding/sharing-code-between-microservices/"
+  - "/sharing-code-between-microservices/"
 ---
 
 My good friend Peter Ledbrook has been pondering the question [how can we share code between microservices](http://blog.cacoethes.co.uk/software/code-reuse-in-micro-services)
